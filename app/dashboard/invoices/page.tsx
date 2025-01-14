@@ -6,12 +6,17 @@ import { Suspense } from "react";
 import Table from "@/app/ui/invoices/table";
 import { fetchInvoicesPages } from "@/app/lib/data";
 import Pagination from "@/app/ui/invoices/pagination";
+import { Metadata } from "next";
 
 interface propsPage {
   searchParams?: Promise<{
     query?: string;
     page?: string;
   }>;
+}
+
+export const metadata : Metadata = {
+  title: 'Invoices '
 }
 
 export default async function page(props: propsPage) {
